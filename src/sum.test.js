@@ -1,5 +1,8 @@
 import sum from "./sum";
 
 test("tesing for sum function", () => {
-  expect(sum(10, 10)).toBe(20);
+  let a = 10;
+  let b = 20;
+  let output = 30;
+  expect(sum(a, b)).toBe(output);
 });
