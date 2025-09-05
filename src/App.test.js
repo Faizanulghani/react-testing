@@ -1,9 +1,9 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import App from "./App";
 
-test("onChange event testing", () => {
+test("Click Event Test", () => {
   render(<App />);
-  let input = screen.getByRole("textbox");
-  fireEvent.change(input, { target: { value: "hello" } });
-  expect(input.value).toBe("hello world");
+  let btn = screen.getByRole("button");
+  fireEvent.click(btn);
+  expect(screen.getByText("Hello World")).toBeInTheDocument();
 });
