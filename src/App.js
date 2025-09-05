@@ -1,18 +1,16 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { useState } from "react";
 
 function App() {
+  let [data, setData] = useState();
   return (
     <div className="App">
-      <p>First React Test case</p>
-      <input type="text" placeholder="This is input" name="username" id="userId" />
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <img
-        title="Ai Image"
-        src="https://incubator.ucf.edu/wp-content/uploads/2023/07/artificial-intelligence-new-technology-science-futuristic-abstract-human-brain-ai-technology-cpu-central-processor-unit-chipset-big-data-machine-learning-cyber-mind-domination-generative-ai-scaled-1-1500x1000.jpg"
+      <h1>Test onChange Event with Input Text</h1>
+      <input
+        type="text"
+        onChange={(e) => setData(e.target.value+" world")}
+        value={data}
       />
     </div>
   );
