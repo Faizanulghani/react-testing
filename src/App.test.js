@@ -19,3 +19,30 @@ test("Testing Input Box", () => {
   expect(checkInput).toHaveAttribute("id", "userId");
   expect(checkInput).toHaveAttribute("type", "text");
 });
+
+describe.only("test case group", () => {
+  test("Testing Input Box", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toHaveAttribute("name", "username");
+  });
+  test("Testing Input Box 2", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toHaveAttribute("name", "username");
+  });
+  describe("inner describe test group", () => {
+    test("Testing Input Box 2", () => {
+      render(<App />);
+      let checkInput = screen.getByRole("textbox");
+      expect(checkInput).toHaveAttribute("name", "username");
+    });
+  });
+});
+describe("Api test case group", () => {
+  test("Testing Input Box", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toHaveAttribute("name", "username");
+  });
+});
