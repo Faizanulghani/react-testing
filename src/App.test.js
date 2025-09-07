@@ -1,7 +1,6 @@
-import { render } from "@testing-library/react";
-import App from "./App";
+import User from "./User";
 
-test("snapshot testing", () => {
-  const container = render(<App />);
-  expect(container).toMatchSnapshot();
+test("getUserList returns correct value", () => {
+  const userInstance = new User({});
+  expect(userInstance.getUserList()).toBe("user list");
 });
