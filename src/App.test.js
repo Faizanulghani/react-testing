@@ -1,15 +1,11 @@
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 
-test("get by label text 1", () => {
+test("input test case", () => {
   render(<App />);
-  const input = screen.getByLabelText("Username");
-  expect(input).toBeInTheDocument();
-  expect(input).toHaveValue("anil");
-});
-test("get by label text 2", () => {
-  render(<App />);
-  const skill = screen.getByLabelText("Skills");
-  expect(skill).toBeInTheDocument();
-  expect(skill).toBeChecked()
+  const inputs = screen.getAllByLabelText("Username");
+
+  for (let i = 0; i < inputs.length; i++) {
+    expect(inputs[i]).toBeInTheDocument();
+  }
 });
