@@ -1,16 +1,15 @@
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 
-test("get by role", () => {
+test("get by label text 1", () => {
   render(<App />);
-  const btn = screen.getAllByRole("button");
-  const option = screen.getAllByRole("option");
-
-  for (let i = 0; i < btn.length; i++) {
-    expect(btn[i]).toBeInTheDocument();
-  }
-
-  for (let i = 0; i < option.length; i++) {
-    expect(option[i]).toBeInTheDocument();
-  }
+  const input = screen.getByLabelText("Username");
+  expect(input).toBeInTheDocument();
+  expect(input).toHaveValue("anil");
+});
+test("get by label text 2", () => {
+  render(<App />);
+  const skill = screen.getByLabelText("Skills");
+  expect(skill).toBeInTheDocument();
+  expect(skill).toBeChecked()
 });

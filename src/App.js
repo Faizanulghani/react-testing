@@ -3,17 +3,12 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <h1>getAllByRole</h1>
-      <button>Click Me</button>
-      <button>Click Me</button>
-      <button>Click Me</button>
-      <button>Click Me</button>
-      <button>Click Me</button>
-      <select>
-        <option value="abc">abc</option>
-        <option value="abc1">abc1</option>
-        <option value="abc2">abc2</option>
-      </select>
+      <h1>RTL Query : getByLabelText</h1>
+      <label htmlFor="username">Username</label>
+      <input type="text" id="username" defaultValue={"anil"} />
+
+      <label htmlFor="skills">Skills</label>
+      <input type="checkbox" id="skills" defaultChecked={true} />
     </div>
   );
 }
