@@ -3,14 +3,17 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <h1>getByRole</h1>
-      <button>CLick Me 1</button>
-      <button>CLick Me 2</button>
-      <label htmlFor="user">User Name</label>
-      <input type="text" id="user" />
-      <label htmlFor="age">User Age</label>
-      <input type="text" id="age" />
-      <div role="dummy">Dummy Text</div>
+      <h1>getAllByRole</h1>
+      <button>Click Me</button>
+      <button>Click Me</button>
+      <button>Click Me</button>
+      <button>Click Me</button>
+      <button>Click Me</button>
+      <select>
+        <option value="abc">abc</option>
+        <option value="abc1">abc1</option>
+        <option value="abc2">abc2</option>
+      </select>
     </div>
   );
 }
