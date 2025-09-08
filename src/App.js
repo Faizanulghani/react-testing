@@ -3,15 +3,11 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <h1>RTL Query : ByPlaceholderText</h1>
-      <label htmlFor="username">Username</label>
-      <input type="text" id="username" placeholder="Enter Username" />
-
-      <label htmlFor="username2">Username</label>
-      <input type="text" id="username2" placeholder="Enter Username" />
-
-      <label htmlFor="username3">Username</label>
-      <input type="text" id="username3" placeholder="Enter Username" />
+      <h1>RTL Query : getByText and getAllByText</h1>
+      <button>Login</button>
+      <p className="para">This is a paragraph</p>
+      <h1>This is a Heading</h1>
+      <h1>This is a Heading</h1>
     </div>
   );
 }

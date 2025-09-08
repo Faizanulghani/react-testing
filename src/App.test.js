@@ -1,11 +1,29 @@
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 
-test("input test case", () => {
+test("button test case", () => {
   render(<App />);
-  const inputs = screen.getAllByPlaceholderText("Enter Username");
+  let btn = screen.getByText("Login");
+  expect(btn).toBeInTheDocument();
+});
 
-  for (let i = 0; i < inputs.length; i++) {
-    expect(inputs[i]).toBeInTheDocument();
+test("p tag test case", () => {
+  render(<App />);
+  let pTag = screen.getByText("This is a paragraph");
+  expect(pTag).toBeInTheDocument();
+  expect(pTag).toHaveClass("para");
+});
+
+// test("h1 tag test case", () => {
+//   render(<App />);
+//   let hTag = screen.getByText("This is a Heading")
+//   expect(hTag).toBeInTheDocument();
+// });
+
+test("multiple h1 tag test case", () => {
+  render(<App />);
+  let hTag = screen.getAllByText("This is a Heading");
+  for (let i = 0; i < hTag.length; i++) {
+    expect(hTag[i]).toBeInTheDocument();
   }
 });
