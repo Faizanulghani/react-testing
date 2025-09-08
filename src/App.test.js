@@ -1,6 +1,14 @@
-import User from "./User";
+import { fireEvent, render, screen } from "@testing-library/react";
+import App from "./App";
+import { handleOtherMethod } from "./helper";
 
-test("getUserList returns correct value", () => {
-  const userInstance = new User({});
-  expect(userInstance.getUserList()).toBe("user list");
+test("Method Testing cacse 1", () => {
+  render(<App />);
+  const btn = screen.getByTestId("button");
+  fireEvent.click(btn);
+  expect(screen.getByText("Updated Data")).toBeInTheDocument();
+});
+
+test("Method Testing cacse 2", () => {
+  expect(handleOtherMethod()).toMatch("hi")
 });
