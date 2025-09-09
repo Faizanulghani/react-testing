@@ -1,8 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 
-test("test match with function", async () => {
+test("test case with custom query", () => {
   render(<App />);
-  const h1 = await screen.findByText("Data Found", {}, { timeout: 2000 });
-  expect(h1).toBeInTheDocument();
+  const element = document.querySelector("#testId");
+  expect(element).toBeInTheDocument();
+  expect(element).toHaveTextContent("Hello World");
 });
