@@ -1,10 +1,11 @@
 import { render, screen, within } from "@testing-library/react";
 import App from "./App";
+import userEvent from "@testing-library/user-event";
 
-test("Querying Within Elements", () => {
+test("Querying Within Elements", async () => {
+  userEvent.setup();
   render(<App />);
-  const element = screen.getByText("Hello World");
-  let subEl = within(element).getByText("Hello");
-  expect(element).toBeInTheDocument();
-  expect(subEl).toBeInTheDocument();
+  const btn = screen.getByText("Click");
+  await userEvent.click(btn);
+  expect(screen.getByText("Hello")).toBeInTheDocument();
 });
