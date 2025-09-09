@@ -1,9 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 
-test("test match with function", () => {
+test("test match with function", async () => {
   render(<App />);
-  // const div = screen.getByText("Login");
-  const div = screen.queryByText("Login");
-  expect(div).not.toBeInTheDocument();
+  const h1 = await screen.findByText("Data Found", {}, { timeout: 2000 });
+  expect(h1).toBeInTheDocument();
 });
