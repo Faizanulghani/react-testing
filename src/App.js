@@ -1,10 +1,11 @@
 import "./App.css";
 
 function App() {
+  let login = false;
   return (
     <div className="App">
-      <h1>TextMatch with Function</h1>
-      <div>Hello World</div>
+      <h1>QueryBy</h1>
+      <button>{login ? "Login" : "Logout"}</button>
     </div>
   );
 }
